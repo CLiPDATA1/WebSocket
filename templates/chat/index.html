@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+    <link rel="icon" href="{% static "favicon_io/favicon-16x16.png" %}" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+            <div class="badge bg-primary text-white" id="paymentCounter">지급결재함 {{payment_count}}</div>
+            {% comment %} <p>지급결재함</p> {% endcomment %}
+            </div>
+            <div class="col-md-4">
+            <div class="badge bg-primary text-white" id="collectionCounter">집금결재함 {{collection_count}}</div>
+            {% comment %} <p>집금결재함</p> {% endcomment %}
+            </div>
+            <div class="col-md-4">
+            <div class="badge bg-primary text-white" id="alarmCounter">알람 {{alarm_count}}</div>
+            {% comment %} <p>알람</p> {% endcomment %}
+            </div>
+            <button id='paymentButton'>지급결재함 알람 발생</button>
+            <button id='collectionButton'>집금결재함 알람 발생</button>
+            <button id='alarmButton'>알람 발생</button>
+        </div>
+    </div>
+        <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>
