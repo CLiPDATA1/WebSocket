@@ -39,3 +39,6 @@ def increase_count(request, notification_type):
     notification.count += 1
     notification.save()
     return JsonResponse({'카운트': notification.count})
+
+def chatting(request):
+    return render(request, 'chat/chatting.html')

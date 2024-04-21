@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#chat-messages {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+#chat-input {
+    margin-top: 10px;
+}
