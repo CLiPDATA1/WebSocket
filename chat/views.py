@@ -15,24 +15,6 @@ def index(request):
     }
     return render(request, 'chat/index.html', context)
 
-# def increase_payment_count(request):
-#     notification, created = Notification.objects.get_or_create(type='payment')
-#     notification.count += 1
-#     notification.save()
-#     return JsonResponse({'카운트': notification.count})
-
-# def increase_collection_count(request):
-#     notification, created = Notification.objects.get_or_create(type='collection')
-#     notification.count += 1
-#     notification.save()
-#     return JsonResponse({'카운트': notification.count})
-
-# def increase_alarm_count(request):
-#     notification, created = Notification.objects.get_or_create(type='alarm')
-#     notification.count += 1
-#     notification.save()
-#     return JsonResponse({'카운트': notification.count})
-
 @require_http_methods(['POST'])
 def increase_count(request, notification_type):
     notification, created = Notification.objects.get_or_create(type=notification_type)
